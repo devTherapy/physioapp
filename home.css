@@ -210,6 +210,7 @@ nav ul {
 }
 .banner__text {
   font-size: 2rem;
+
   color: var(--prussian-blue);
   font-family: var(--poppins);
 }
@@ -218,6 +219,16 @@ nav ul {
   word-wrap: break-word;
   color: var(--dark-blue);
   font-weight: 500;
+}
+
+@media Screen and (min-width: 700px) {
+  .banner p {
+    width: 60%;
+  }
+  .banner__text {
+    width: 70%;
+    word-wrap: break-word;
+  }
 }
 
 /* .btn__container {
