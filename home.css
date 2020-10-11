@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
+:root {
+  /* --prussian-blue: #052d44ff; */
+  --prussian-blue: rgba(0, 13, 20, 0.849);
+  --pale-silver: #c0bcb5ff;
+  --medium-purple: #8b80f9ff;
+  --tenne-tawny: #cc5803ff;
+  --periwinkle-crayola: #bfd0eaff;
+  --dark-blue: rgb(2, 2, 51);
+  --poppins: "Poppins", sans-serif;
+  --Roboto: "Roboto", sans-serif;
+
+  --fern-green: #5b6f52ff;
+  --prussian-blue: #052d44ff;
+  --platinum: #e8eaeaff;
+  --beaver: #a9806dff;
+  --carolina-blue: #349ac8ff;
+  --transition: all 0.5s ease-in-out;
+}
+
+/* font-family: 'Sansita Swashed', cursive; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--Roboto);
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  background: url("IMAGES 2/IMG4.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-color: #eee; */
+  background-color: #eee;
+  /* background-color: black;
+  opacity: 0.9; */
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+}
+
+.brand {
+  padding-left: 2rem;
+  font-family: var(--poppins);
+  font-size: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--dark-blue);
+  letter-spacing: 1px;
+}
+.brand:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+#hamburger {
+  padding: 1.5rem 2rem;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  /* background-color: #eee; */
+  z-index: 999;
+  border-radius: 9px;
+  cursor: pointer;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  display: none;
+}
+.bar,
+.bar::before,
+.bar::after {
+  content: "";
+  width: 3rem;
+  position: absolute;
+  height: 2px;
+  background-color: var(--dark-blue);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transition: var(--transition);
+}
+.bar::before {
+  top: -2rem;
+}
+.bar::after {
+  top: 2rem;
+}
+.open #hamburger {
+  background-color: #eee;
+}
+.open .bar {
+  background-color: transparent;
+}
+.open .bar::before {
+  transform: rotate(-45deg);
+}
+
+.open .bar::after {
+  transform: rotate(45deg);
+}
+.open .bar::after,
+.open .bar::before {
+  top: 0px;
+}
+nav {
+  margin-top: 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin-right: 2rem;
+}
+
+.nav__item {
+  padding-right: 3rem;
+}
+.nav__item:nth-child(odd) {
+  animation: up 1s forwards;
+}
+.nav__item:nth-child(even) {
+  animation: down 1s forwards;
+}
+.nav__item:hover {
+  /* animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; */
+}
+.nav__links {
+  color: var(--dark-blue);
+  font-family: var(--poppins);
+  font-size: 1rem;
+  padding: 0, 1rem;
+
+  text-decoration: none;
+  /* font-weight: 400; */
+}
+.nav__links:hover {
+  background-color: rgb(2, 2, 51);
+  color: #fff;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes up {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes down {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.banner {
+  position: absolute;
+  padding: 2rem;
+  top: 30%;
+}
+.banner__text {
+  font-size: 2rem;
+  color: var(--prussian-blue);
+  font-family: var(--poppins);
+}
+.banner p {
+  width: 70%;
+  word-wrap: break-word;
+  color: var(--dark-blue);
+  font-weight: 500;
+}
+
+/* .btn__container {
+  width: 40%;
+} */
+.action__btn {
+  width: 40%;
+  height: 3rem;
+  margin-left: -5px;
+  margin-top: 10%;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: var(--tenne-tawny);
+  font-size: 1rem;
+  color: #eee;
+  font-family: var(--poppins);
+  transition: var(--transition);
+}
+
+.action__btn:hover {
+  background-color: rgb(179, 78, 6);
+}
+@media Screen and (max-width: 700px) {
+  header {
+    perspective: 75rem;
+    overflow: hidden;
+    transform-style: preserve-3d;
+  }
+
+  .nav__item:nth-child(n) {
+    animation: initial;
+  }
+  nav {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18rem;
+    height: 100%;
+    background-color: #eee;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: rotateY(180deg);
+    transform-origin: top left;
+    transition: transform 0.65s cubic-bezier(0.55, 0.55, 0.675, 0.19);
+  }
+
+  #hamburger {
+    display: block;
+    background-color: transparent;
+  }
+
+  ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav__item {
+    /* padding: 1.5rem 3rem; */
+    padding: 0.5rem 2rem;
+  }
+
+  .brand {
+    margin-top: -1.5rem;
+    font-size: 2.5rem;
+  }
+
+  .nav__links {
+    font-size: 1.5rem;
+  }
+  header.open nav {
+    transform: translateY(0);
+  }
+  .overlay.open {
+    background-color: var(--dark-blue);
+    opacity: 0.85;
+    transform: scaleX(1);
+    transition: 0.4s ease-in;
+  }
+  .banner p {
+    width: 100%;
+  }
+  .action__btn {
+    width: 100%;
+    margin-top: 30%;
+  }
+  header.open .banner .action__btn {
+    opacity: 0.5;
+    transition: var(--transition);
+  }
+}
+
+/* what i have left to do
+adjust side nav style 
+fix brand name, add an icon
+create sliding in transition for my texts
+*/
